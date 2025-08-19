@@ -10,11 +10,21 @@ function convertToRoman(num) {
     };
 
   //your code here
+	let result = "";
+
+  for (let [roman, value] of symbols) {
+    while (num >= value) {
+      result += roman;
+      num -= value;
+    }
+  }
+
+  return result.toUpperCase();
 
 }
 // You can test your code by running the above function and printing it to console by pressing the run button at the top. To run it with input 36, uncomment the following line
 
-// console.log(convertToRoman(36));
+console.log(convertToRoman(36));
 
 
 
